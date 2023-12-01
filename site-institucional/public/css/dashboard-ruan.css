@@ -1,0 +1,533 @@
+/* Define a fonte padrão para o documento */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Zera as margens padrão do corpo da página */
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #4B3753 0%, #4B3753 0%, #4B3753 0.01%, rgba(90, 52, 169, 0.93) 9.09%,
+            #8565C9 18.18%, rgba(180, 153, 238, 0.96) 27.27%, rgba(170, 143, 225, 0.63) 39.58%,
+            rgba(206, 185, 249, 0.93) 50%, rgba(151, 116, 222, 0.68) 57.29%, rgba(161, 122, 243, 0.85) 64.58%,
+            rgba(167, 131, 242, 0.90) 70.31%, rgba(139, 89, 245, 0.63) 81.82%, #5A34A9 90.91%, rgba(75, 55, 83, 0.99) 100%);
+}
+
+/* Configurações para a seção principal da página */
+.container_principal {
+    height: 150vh;
+    display: flex;
+}
+
+/* Estilo para a área do dashboard */
+.area_dash {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+/* Estilo para o card de monitoramento */
+.card_monitoramento {
+    width: 90%;
+    height: fit-content;
+    background-color: rgba(36, 36, 36, 1);
+    margin: 3rem;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -39%);
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+}
+
+/* Estilo para informações dentro do card de monitoramento */
+.info {
+    width: 98%;
+    display: flex;
+    position: relative;
+    align-self: center;
+    margin: 1rem;
+    background-color: #3C375C;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 16px 24px 0px rgba(0, 0, 0, 0.06), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 2.5vh;
+    border-radius: 1rem;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* Estilo para a parte superior do dashboard */
+.dash_superior {
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para a mensagem de boas-vindas */
+.bem_vindo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+}
+
+/* Estilo para o texto da mensagem de boas-vindas */
+.text_bemVindo1 {
+    font-size: 4vh;
+    font-weight: bolder;
+}
+
+.text_bemVindo2 {
+    font-size: 3vh;
+}
+
+/* Estilo para os elementos de informações */
+.info h2 {
+    margin: 10px;
+}
+
+/* Estilo para um bloco de informações */
+.bloco_info {
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+
+/* Estilo para a área de status de informações */
+.info_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.49);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Estilo para a imagem de um computador */
+.computador {
+    width: 8vw;
+}
+
+/* Estilo para o ID de um computador */
+.idComputador {
+    width: 12vw;
+}
+
+/* Estilo para a atividade de um computador */
+.atividade {
+    width: 11vw;
+}
+
+/* Estilo para o login de um computador */
+.login {
+    width: 12vw;
+}
+
+/* Estilo para a seleção de andares */
+.select_andares {
+    width: 8vw;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.49);
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    border: black solid 1px;
+}
+
+/* Efeito de hover para a seleção de andares */
+.select_andares:hover {
+    cursor: pointer;
+}
+
+/* Estilo para o botão em um bloco de informações */
+.bloco_info button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9vw;
+    height: 6vh;
+    font-size: 2.5vh;
+    border-radius: 0.5rem;
+    background-color: #332d5b96;
+    color: white;
+    font-weight: bolder;
+    border: black solid 1px;
+}
+
+/* Efeito de clique para o botão de deletar */
+.botao_deletar :active {
+    box-shadow: 0 0 1rem #5A34A9;
+}
+
+/* Efeito de hover para o botão de deletar */
+.botao_deletar:hover {
+    cursor: pointer;
+}
+
+/* Estilo para a área do topo do dashboard */
+.area_topo {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+}
+
+/* Estilo para a parte esquerda da área do topo */
+.area_topo_esquerda {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo para o painel principal */
+.painel {
+    width: 100%;
+    margin-left: 70px;
+    color: white;
+    border-right: 1px solid #ccc;
+    height: 45vh;
+}
+
+/* Estilo para a área das barras de progresso */
+.area_barra {
+    display: flex;
+    justify-content: center;
+    height: 14vh;
+    flex-direction: column;
+}
+
+/* Estilo para a barra de progresso */
+.barra_painel {
+    width: 95%;
+    height: 20px;
+    border-radius: 8px;
+}
+
+/* Estilos específicos para o progresso no navegador WebKit (como o Chrome) */
+progress::-webkit-progress-bar {
+    background: #3D344D;
+    border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, #A36BFD 0%, #6B8AEB 103.21%);
+    border-radius: 8px;
+}
+
+/* Estilo para os títulos no painel */
+.painel h2 {
+    margin: 0.5rem;
+    color: #FFF;
+    font-size: 3vh;
+    font-weight: 500;
+}
+
+.painel h3 {
+    color: #FFF;
+    font-size: 2vh;
+    font-weight: 500;
+}
+
+/* Estilo para a parte direita da área do topo */
+.area_topo_direita {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+/* Estilo para os KPIs */
+.kpi {
+    flex: 1;
+    text-align: center;
+    color: white;
+    width: 150px;
+    height: 227px;
+    border-radius: 28px;
+    background-color: rgba(36, 36, 36, 1);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2), 0px 4px 10px 0px rgba(0, 0, 0, 0.3), 0px 14px 36px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+
+/* Estilo para a área inferior do dashboard */
+.area_inferior {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Estilo para o gráfico */
+.chart {
+    width: 40vw;
+}
+
+#grafico_cpu,
+#grafico_ram {
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+/* Estilos para as barras de progresso dentro do painel */
+.h3-progress {
+    display: flex;
+}
+
+.h3-margin {
+    margin-left: 1%;
+}
+
+/* Estilo para a calculadora de recursos */
+.calculadora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    background-color: #5A34A9;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5vh;
+}
+
+/* Estilo para o botão da calculadora */
+.botao-calculadora {
+    background-color: #00000000;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5vh;
+    width: 15vw;
+    height: 10vh;
+    font-size: 5vh;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de hover para o botão da calculadora */
+.botao-calculadora:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: #5A34A9;
+}
+
+/* Estilo para o pop-up de informações */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os parágrafos dentro do pop-up */
+.popup p {
+    margin-bottom: 15px;
+}
+
+/* Estilo para o botão de fechar o pop-up */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover para o botão de fechar o pop-up */
+.close:hover {
+    transform: scale(2);
+}
+
+/* Estilo para a imagem do botão de pop-up */
+.botao-popup img {
+    width: 35px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover para a imagem do botão de pop-up */
+.botao-popup img:hover {
+    transform: scale(1.5);
+}
+
+/* Estilo para o botão de pop-up */
+.botao-popup button {
+    background-color: #00000000;
+    border: none;
+}
+
+/* Estilo para a área do botão de pop-up */
+.botao-popup {
+    display: flex;
+    justify-content: end;
+    padding: 5%;
+}
+
+/* Estilo para a linha de botões */
+.botao_row {
+    display: flex;
+}
+
+.area_inferior_esquerda {
+    width: 60%;
+    height: 60vh;
+}
+
+.area_inferior_direita {
+    display: flex;
+    width: 40%;
+    height: 60vh;
+    justify-content: end;
+}
+
+.botao-grafico {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    background-color: #5A34A9;
+    border-radius: 5vh;
+
+}
+
+.botao-grafico button {
+    background-color: #00000000;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5vh;
+    width: fit-content;
+    height: 8vh;
+    font-size: 4vh;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 5%;
+}
+
+.botao-grafico button:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: #5A34A9;
+}
+
+.grafico {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+/* Personaliza a barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px;
+    /* Largura da barra de rolagem */
+    background: linear-gradient(180deg, #4B3753 0%, #4B3753 0%, #4B3753 0.01%, rgba(90, 52, 169, 0.93) 9.09%,
+            #8565C9 18.18%, rgba(180, 153, 238, 0.96) 27.27%, rgba(170, 143, 225, 0.63) 39.58%,
+            rgba(206, 185, 249, 0.93) 50%, rgba(151, 116, 222, 0.68) 57.29%, rgba(161, 122, 243, 0.85) 64.58%,
+            rgba(167, 131, 242, 0.90) 70.31%, rgba(139, 89, 245, 0.63) 81.82%, #5A34A9 90.91%, rgba(75, 55, 83, 0.99) 100%);
+    /* Barra de rolagem transparente */
+}
+
+/* Personaliza o polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #5A34A9;
+    /* Cor do polegar (roxo) */
+    border-radius: 6px;
+    /* Borda arredondada do polegar */
+}
+
+/* Altera a cor do polegar da barra de rolagem quando estiver passando o mouse sobre ele */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #352e44;
+}
+
+/* ... (Estilos para a área do meio) */
+.area_meio {
+    text-align: center;
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+}
+
+.area_meio_direita {
+    width: 50%;
+    display: flex;
+    justify-content: baseline;
+    margin-right: 10%;
+}
+
+.area_meio_esquerda {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.recomendacao {
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 30px;
+    border: solid 2px white;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.alertas {
+    background-color: rgb(0, 0, 0, 0);
+    border-radius: 30px;
+    border: solid 2px white;
+    width: 50%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.recomendacao .recomendacao_p {
+    width: 90%;
+    background-color: #5A34A9;
+    border-radius: 30px;
+    padding: 1%;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.recomendacao .recomendacao_p:hover {
+    transform: scale(1.1);
+}
+
+.container_recomendacao_p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_alerta {
+    display: flex;
+    justify-content: space-evenly;
+    color: gre;
+}

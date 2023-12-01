@@ -1,0 +1,60 @@
+/* Estilo para a barra lateral */
+.barra_lateral {
+    height: 190vh;
+    width: 100px;
+    /* largura da barra lateral */
+    background-color: rgba(36, 36, 36, 1);
+    /* cor de fundo */
+    color: white;
+    /* cor do texto */
+    display: flex;
+    flex-direction: column;
+    /* empilha os itens verticalmente */
+    align-items: flex-end;
+    /* alinha os itens à direita */
+    top: 0;
+    /* alinha no topo da área pai */
+    bottom: 0;
+    /* alinha na parte inferior da área pai */
+}
+
+/* Estilo para o primeiro item da barra lateral */
+.primeiro {
+    margin-top: 100%;
+    /* define a margem superior para afastar o primeiro item do topo da barra lateral */
+}
+
+/* Estilo para as opções na barra lateral */
+.barraLateral_option {
+    height: 50px;
+    /* altura das opções */
+    width: 85px;
+    /* largura das opções */
+    border-top-left-radius: 10px;
+    /* arredonda o canto superior esquerdo */
+    border-bottom-left-radius: 10px;
+    /* arredonda o canto inferior esquerdo */
+    display: flex;
+    align-items: center;
+    /* centraliza verticalmente o conteúdo */
+    justify-content: center;
+    /* centraliza horizontalmente o conteúdo */
+    transition-duration: 0.5s;
+    /* duração da transição */
+    margin-bottom: 5%;
+    /* margem inferior entre as opções */
+}
+
+/* Efeito de hover para as opções na barra lateral */
+.barraLateral_option:hover {
+    background-color: blueviolet;
+    /* altera a cor de fundo no hover */
+    transition-duration: 0.5s;
+    /* duração da transição */
+}
+
+/* Classe de cursor para indicar que o elemento é interativo */
+.cursor {
+    cursor: pointer;
+    /* altera o cursor para indicar interatividade */
+}

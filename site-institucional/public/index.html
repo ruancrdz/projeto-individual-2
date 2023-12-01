@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metadados do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.ico">
+    <title>Dashboard | Ruan</title>
+
+    <!-- Importando folhas de estilo -->
+    <link rel="stylesheet" href="css/dashboard-ruan.css">
+    <link rel="stylesheet" href="css/barra-lateral.css">
+
+    <!-- Importando a biblioteca Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Estrutura principal do corpo -->
+    <div class="container_principal">
+        <div class="barra_lateral" id="lateral_barra"></div>
+        <div class="area_dash">
+            <!-- Seção superior do dashboard -->
+            <div class="dash_superior">
+                <div class="bem_vindo">
+                    <!-- Mensagem de boas-vindas -->
+                    <span class="text_bemVindo1">
+                        Bem-vindo
+                    </span>
+                    <span class="text_bemVindo2">
+                        Calcule se as configurações do seu computador são ideais para trabalhar em um call center.
+                    </span>
+                </div>
+            </div>
+            <!-- Seção de monitoramento -->
+            <div class="card_monitoramento">
+                <div class="area_topo">
+                    <!-- Área superior esquerda -->
+                    <div class="area_topo_esquerda">
+                        <div class="painel">
+                            <!-- Pop-up com informações sobre configurações -->
+                            <div id="popup" class="popup">
+                                <div onclick="fecharPopup()" class="close">X</div>
+                                <br><b>CPU:</b>
+                                A CPU, ou processador, é a unidade central de processamento do computador. Em um
+                                ambiente de call center, é ideal ter uma <b>CPU com pelo menos 4 núcleos</b>. Isso
+                                permite a
+                                execução eficiente de múltiplas tarefas simultaneamente, melhorando a capacidade de
+                                resposta do sistema durante chamadas e operações relacionadas.
+
+                                <br><br><b>RAM:</b>
+                                A RAM (memória de acesso aleatório) é essencial para a velocidade e desempenho do
+                                sistema. Com <b>8GB de RAM</b>, um call center pode lidar de maneira eficaz com várias
+                                aplicações abertas ao mesmo tempo. Isso evita atrasos no atendimento ao cliente,
+                                garantindo uma experiência mais fluida e produtiva.
+
+                                <br><br><b>Disco:</b>
+                                O armazenamento em disco é crucial para guardar dados essenciais do call center. Um
+                                <b>disco de 500GB</b> oferece espaço adequado para armazenar registros de chamadas,
+                                informações
+                                do cliente e documentos relevantes. Isso assegura uma gestão eficiente de dados,
+                                facilitando o acesso rápido às informações necessárias durante as interações com os
+                                clientes.
+                            </div>
+
+                            <!-- Barras de progresso para CPU, RAM e Disco -->
+                            <div class="area_barra">
+                                <!-- Elementos para CPU -->
+                                <div class="h3-progress">
+                                    <h3>Qualidade da CPU: </h3>
+                                    <h3 class="h3-margin" id="cpu"></h3>
+                                </div>
+                                <progress class="barra_painel" max="4" value="2" id="barra_cpu"></progress>
+                            </div>
+
+                            <!-- Elementos para RAM -->
+                            <div class="area_barra">
+                                <div class="h3-progress">
+                                    <h3 clas>Qualidade da RAM: </h3>
+                                    <h3 class="h3-margin" id="ram"></h3>
+                                </div>
+                                <progress class="barra_painel" max="8" value="4" id="barra_ram"></progress>
+                            </div>
+
+                            <!-- Elementos para Disco -->
+                            <div class="area_barra">
+                                <div class="h3-progress">
+                                    <h3>Qualidade do Disco: </h3>
+                                    <h3 class="h3-margin" id="disco"></h3>
+                                </div>
+                                <progress class="barra_painel" max="500" value="250" id="barra_disco"></progress>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Área superior direita -->
+                    <div class="area_topo_direita">
+                        <!-- Calculadora de Recursos -->
+                        <div class="calculadora">
+                            <h1>Calculadora de Recursos</h1>
+                            <div class="botao_row">
+                                <!-- Botões para calcular e mostrar informações -->
+                                <button class="botao-calculadora" onclick="calcular()">Calcular</button>
+                                <div class="botao-popup">
+                                    <button onclick="abrirPopup()"><img src="assets/informacao.png"
+                                            alt="Informação"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área do meio do dashboard -->
+                <div class="area_meio">
+                    <!-- Área meio esquerda -->
+                    <div class="area_meio_esquerda">
+                        <div class="alertas">
+                            <div>
+                                <h1>Alertas</h1>
+                            </div>
+                            <div class="container_alerta">
+                                <div>
+                                    <p>CPU:</p>
+                                    <p>RAM:</p>
+                                    <p>DISCO:</p>
+                                </div>
+                                <div>
+                                    <p id="alerta_metrica_cpu"></p>
+                                    <p id="alerta_metrica_ram"></p>
+                                    <p id="alerta_metrica_disco"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Área meio direita -->
+                    <div class="area_meio_direita">
+                        <!-- Recomendações para configurações inadequadas -->
+                        <div class="recomendacao">
+                            <div>
+                                <h1 id="recomendacao_h1">Recomendações</h1>
+                            </div>
+                            <div class="container_recomendacao_p">
+                                <p class="recomendacao_p" id="recomendacao_nucleo" style="display: none;">Melhore a
+                                    agilidade no call center com um upgrade para mais de 4 núcleos de RAM.</p>
+                                <p class="recomendacao_p" id="recomendacao_ram" style="display: none;">Potencialize seu
+                                    desempenho no call center com 8GB de RAM.</p>
+                                <p class="recomendacao_p" id="recomendacao_disco" style="display: none;">Evite problemas
+                                    de armazenamento no call center: invista em um disco de 500GB.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Área inferior do dashboard -->
+                <div class="area_inferior">
+                    <!-- Área inferior direita -->
+                    <div class="area_inferior_direita">
+                        <!-- Botões para alterar o tipo de gráfico -->
+                        <div class="botao-grafico">
+                            <h1>Estilos de Gráficos</h1>
+                            <button onclick="alterarTipoGrafico('line')">Gráfico de Linha</button>
+                            <button onclick="alterarTipoGrafico('scatter')">Gráfico de Dispersão</button>
+                            <button onclick="alterarTipoGrafico('bar')">Gráfico de Barras</button>
+                            <button onclick="alterarTipoGrafico('radar')">Gráfico de Radar</button>
+                        </div>
+                    </div>
+
+                    <!-- Área inferior esquerda -->
+                    <div class="area_inferior_esquerda">
+                        <!-- Elemento para o gráfico -->
+                        <div class="grafico">
+                            <canvas id="graficoTempoReal" width="300px"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Script para fazer solicitação AJAX e obter dados do servidor -->
+<script>
+    function calcular() {
+        // Fazendo uma solicitação AJAX para o servidor
+        fetch('http://localhost:3333/dashboard/calcular')
+            .then(response => response.json())
+            .then(data => {
+                // Destruturando os dados obtidos
+                const { CPU, RAM, DISCO } = data;
+
+                // Salvando os resultados no sessionStorage
+                sessionStorage.setItem('CPU', CPU);
+                sessionStorage.setItem('RAM', RAM);
+                sessionStorage.setItem('DISCO', DISCO);
+
+                // Atualizando elementos HTML com os resultados
+                const cpuDiv = document.getElementById('cpu');
+                cpuDiv.textContent = ` ${CPU} Núcleos`;
+
+                const ramDiv = document.getElementById('ram');
+                ramDiv.textContent = ` ${RAM}Gb`;
+
+                const discoDiv = document.getElementById('disco');
+                discoDiv.textContent = ` ${DISCO}Gb`;
+
+                // Atualizando barras de progresso com os valores obtidos
+                const barraCpu = document.getElementById('barra_cpu');
+                barraCpu.value = CPU;
+
+                const barraRam = document.getElementById('barra_ram');
+                barraRam.value = RAM;
+
+                const barraDisco = document.getElementById('barra_disco');
+                barraDisco.value = DISCO;
+
+                // Exibindo recomendações com base nos dados
+                exibirRecomendacoes(data.CPU, data.RAM, data.DISCO);
+                document.getElementById('recomendacao_h1').style.display = 'block';
+            })
+            .catch(error => console.error('Erro ao calcular:', error));
+    }
+
+    // Função para exibir recomendações
+    function exibirRecomendacoes(cpu, ram, disco) {
+        // Verificando e exibindo recomendação para Núcleos
+        if (cpu < 4) {
+            document.getElementById('recomendacao_nucleo').style.display = 'block';
+        } else {
+            document.getElementById('recomendacao_nucleo').style.display = 'none';
+        }
+
+        // Adicionando verificações e exibições para RAM e Disco conforme necessário
+        // Exemplo para RAM
+        if (ram < 8) {
+            document.getElementById('recomendacao_ram').style.display = 'block';
+        } else {
+            document.getElementById('recomendacao_ram').style.display = 'none';
+        }
+
+        // Exemplo para Disco
+        if (disco < 500) {
+            document.getElementById('recomendacao_disco').style.display = 'block';
+        } else {
+            document.getElementById('recomendacao_disco').style.display = 'none';
+        }
+    }
+
+    // Função para abrir o pop-up de informações
+    function abrirPopup() {
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    // Função para fechar o pop-up de informações
+    function fecharPopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Função para alterar o tipo de gráfico
+    function alterarTipoGrafico(tipo) {
+        // Alterando o tipo do gráfico
+        graficoTempoReal.config.type = tipo;
+
+        // Atualizando o gráfico
+        graficoTempoReal.update();
+    }
+</script>
+
+<!-- Script para criar e atualizar o gráfico em tempo real -->
+<script>
+    var ctx = document.getElementById('graficoTempoReal').getContext('2d');
+    var graficoTempoReal = new Chart(ctx, {
+        // Configuração inicial do gráfico
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'CPU %',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 2,
+                data: [],
+                fill: false
+            }, {
+                label: 'RAM %',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                data: [],
+                fill: false
+            }, {
+                label: 'DISCO %',
+                borderColor: 'rgba(255, 205, 86, 1)',
+                borderWidth: 2,
+                data: [],
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    type: 'linear',
+                    position: 'bottom'
+                },
+                x: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Função para atualizar o gráfico em tempo real
+    function atualizarGraficoTempoReal() {
+
+        // Fazendo uma solicitação AJAX para obter dados de métricas em tempo real
+        fetch('http://localhost:3333/dashboard/metricas_tempo_real')
+            .then(response => response.json())
+            .then(data => {
+                if (data.cpu_percent !== null && data.ram_percent !== null && data.disco_percent !== null) {
+                    // Adicionando nova entrada de tempo
+                    graficoTempoReal.data.labels.push(new Date().toLocaleTimeString());
+
+                    // Adicionando dados aos conjuntos de dados correspondentes
+                    graficoTempoReal.data.datasets[0].data.push(data.cpu_percent);
+                    graficoTempoReal.data.datasets[1].data.push(data.ram_percent);
+                    graficoTempoReal.data.datasets[2].data.push(data.disco_percent);
+
+                    // Limitando o número de entradas no gráfico para 10
+                    if (graficoTempoReal.data.labels.length > 5) {
+                        graficoTempoReal.data.labels.shift();
+                        graficoTempoReal.data.datasets[0].data.shift();
+                        graficoTempoReal.data.datasets[1].data.shift();
+                        graficoTempoReal.data.datasets[2].data.shift();
+                    }
+
+                    // Atualizando o gráfico
+                    graficoTempoReal.update();
+                } else {
+                    console.error('Valores nulos recebidos.');
+                }
+
+                function atualizarMetrica() {
+                    if (data.cpu_percent >= 99) {
+                        document.getElementById('alerta_metrica_cpu').innerHTML = `<span style="color: red;">Crítico</span>`;
+                    } else if (data.cpu_percent >= 43.40) {
+                        document.getElementById('alerta_metrica_cpu').innerHTML = `<span style="color: yellow;">Alerta`;
+                    } else {
+                        document.getElementById('alerta_metrica_cpu').innerHTML = `<span style="color: green;">Ideal`;
+                    }
+
+                    if (data.ram_percent >= 91.60) {
+                        document.getElementById('alerta_metrica_ram').innerHTML = `<span style="color: red;">Crítico</span>`;
+                    } else if (data.ram_percent >= 76.40) {
+                        document.getElementById('alerta_metrica_ram').innerHTML = `<span style="color: yellow;">Alerta`;
+                    } else {
+                        document.getElementById('alerta_metrica_ram').innerHTML = `<span style="color: green;">Ideal`;
+                    }
+
+                    if (data.disco_percent >= 99) {
+                        document.getElementById('alerta_metrica_disco').innerHTML = `<span style="color: red;">Crítico</span>`;
+                    } else if (data.disco_percent >= 90) {
+                        document.getElementById('alerta_metrica_disco').innerHTML = `<span style="color: yellow;">Alerta`;
+                    } else {
+                        document.getElementById('alerta_metrica_disco').innerHTML = `<span style="color: green;">Ideal`;
+                    }
+                }
+                atualizarMetrica()
+            })
+            .catch(error => console.error('Erro ao obter dados para o gráfico:', error));
+    }
+
+    // Atualizando o gráfico a cada 3 segundos
+    setInterval(atualizarGraficoTempoReal, 3000);
+</script>
+
+</html>

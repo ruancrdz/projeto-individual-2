@@ -5,9 +5,9 @@
 Este repositório contém um projeto de dashboard para verificar se as configurações do seu computador são ideais para trabalhar em um call center. O dashboard exibe métricas em tempo real, recomendações de upgrades e gráficos que representam o desempenho do sistema.
 
 ## Funcionalidades
-Verificação de Recursos: Calcula e exibe informações sobre a CPU, RAM e Disco do seu computador.
-Recomendações: Fornece recomendações de upgrades com base nas configurações atuais.
-Gráfico em Tempo Real: Apresenta o desempenho da CPU, RAM e Disco em um gráfico dinâmico.
+- **Verificação de Recursos:** Calcula e exibe informações sobre a CPU, RAM e Disco do seu computador.
+- **Recomendações:** Fornece recomendações de upgrades com base nas configurações atuais.
+- **Gráfico em Tempo Real:** Apresenta o desempenho da CPU, RAM e Disco em um gráfico dinâmico.
 
 ## Tecnologias Utilizadas
 

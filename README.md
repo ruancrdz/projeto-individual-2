@@ -1,18 +1,51 @@
 <img src="header-ruan.png">
 
-Este é um projeto de dashboard desenvolvido para monitorar as configurações do seu computador em um ambiente de call center. O dashboard exibe informações em tempo real sobre o desempenho da CPU, RAM e disco, além de fornecer recomendações com base nos dados coletados.
+Este é um projeto de dashboard web para avaliar se as configurações do seu computador são ideais para trabalhar em um call center. Ele exibe métricas em tempo real, recomendações e gráficos para CPU, RAM e Disco.
 
-## Funcionalidades
+## Pré-requisitos
 
-   - **Calculadora de Recursos:** Clique no botão "Calcular" para obter informações sobre a qualidade da sua CPU, RAM e Disco.
+Certifique-se de ter os seguintes itens instalados antes de usar o projeto:
 
-   - **Gráfico em Tempo Real:** O gráfico exibe o desempenho da CPU, RAM e Disco ao longo do tempo.
+- Navegador web moderno
+- [Chart.js](https://www.chartjs.org/) (incluso via CDN)
 
-   - **Estilos de Gráficos:** Experimente diferentes estilos de gráficos clicando nos botões disponíveis.
+## Instalação e Uso
 
-   - **Alertas e Recomendações:** Fique atento aos alertas sobre a qualidade das métricas e às recomendações para melhorar o desempenho do seu computador.
+1. Clone o repositório:
 
-   - **Informações Adicionais:** Clique no ícone de informação para obter detalhes sobre as métricas e configurações ideais.
+   ```bash
+   git clone https://github.com/Centrix-Solutions-Grupo-07/Projeto_Individual_Ruan.git
+   ```
+
+2. Abra o arquivo `index.html` no seu navegador.
+
+## Recursos
+
+### Calculadora de Recursos
+
+- Pressione o botão "Testar" para calcular as métricas do seu sistema.
+- Clique no ícone de informação para obter detalhes sobre as recomendações.
+
+### Métricas em Tempo Real
+
+- O gráfico exibe a utilização da CPU, RAM e Disco ao longo do tempo.
+- Alertas são exibidos para indicar o status (Ideal, Alerta, Crítico) de cada métrica.
+
+### Tipos de Gráficos
+
+- Selecione o tipo de gráfico desejado no dropdown.
+
+## API
+
+O projeto utiliza uma API local para obter dados em tempo real. Certifique-se de que a API esteja configurada corretamente.
+
+```javascript
+// API endpoint para calcular métricas
+http://localhost:8080/dashboard/calcular
+
+// API endpoint para obter métricas em tempo real
+http://localhost:8080/dashboard/metricas_tempo_real
+```
 
 ## Tecnologias Utilizadas
 
@@ -20,48 +53,13 @@ Este é um projeto de dashboard desenvolvido para monitorar as configurações d
                                
 <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /> <img  height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" />
 
-## Instalação
-
-Se você deseja executar o projeto localmente, siga estas etapas:
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/ruancrdz/projeto-individual-2.git
-
-2. Navegue até o diretório do projeto:
-   
-   ```bash
-   cd projeto-individual
-
-3. Instale as dependências:
-
-   ```bash
-   npm install
-
-4. Inicie o servidor:
-   ```bash
-   npm start
-
 ## Contribuição
 
-Contribuições são bem-vindas! Se você deseja contribuir com melhorias ou correções, siga estas etapas:
+Sinta-se à vontade para contribuir com melhorias. Abra uma [issue](https://github.com/seu-usuario/seu-repositorio/issues) ou envie um [pull request](https://github.com/seu-usuario/seu-repositorio/pulls).
 
-1. Faça um fork deste repositório.
-2. Crie uma nova branch com suas modificações:
+## Licença
 
-   ```bash
-   git checkout -b sua-branch
-
-3. Faça as alterações desejadas e faça commit delas:
-   ```bash
-   git commit -m "Descrição das suas alterações"
-
-4. Envie as alterações para o seu fork:
-   ```bash
-   git push origin sua-branch
-
-5. Crie um pull request para este repositório, descrevendo suas alterações.
+Este projeto está licenciado sob a licença [MIT](LICENSE).
 
 ## Contatos:
 

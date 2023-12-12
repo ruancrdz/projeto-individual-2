@@ -1,51 +1,13 @@
 <img src="header-ruan.png">
 
-Este é um projeto de dashboard web para avaliar se as configurações do seu computador são ideais para trabalhar em um call center. Ele exibe métricas em tempo real, recomendações e gráficos para CPU, RAM e Disco.
+## Introdução
 
-## Pré-requisitos
+Este repositório contém um projeto de dashboard para verificar se as configurações do seu computador são ideais para trabalhar em um call center. O dashboard exibe métricas em tempo real, recomendações de upgrades e gráficos que representam o desempenho do sistema.
 
-Certifique-se de ter os seguintes itens instalados antes de usar o projeto:
-
-- Navegador web moderno
-- [Chart.js](https://www.chartjs.org/) (incluso via CDN)
-
-## Instalação e Uso
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/Centrix-Solutions-Grupo-07/Projeto_Individual_Ruan.git
-   ```
-
-2. Abra o arquivo `index.html` no seu navegador.
-
-## Recursos
-
-### Calculadora de Recursos
-
-- Pressione o botão "Testar" para calcular as métricas do seu sistema.
-- Clique no ícone de informação para obter detalhes sobre as recomendações.
-
-### Métricas em Tempo Real
-
-- O gráfico exibe a utilização da CPU, RAM e Disco ao longo do tempo.
-- Alertas são exibidos para indicar o status (Ideal, Alerta, Crítico) de cada métrica.
-
-### Tipos de Gráficos
-
-- Selecione o tipo de gráfico desejado no dropdown.
-
-## API
-
-O projeto utiliza uma API local para obter dados em tempo real. Certifique-se de que a API esteja configurada corretamente.
-
-```javascript
-// API endpoint para calcular métricas
-http://localhost:8080/dashboard/calcular
-
-// API endpoint para obter métricas em tempo real
-http://localhost:8080/dashboard/metricas_tempo_real
-```
+## Funcionalidades
+Verificação de Recursos: Calcula e exibe informações sobre a CPU, RAM e Disco do seu computador.
+Recomendações: Fornece recomendações de upgrades com base nas configurações atuais.
+Gráfico em Tempo Real: Apresenta o desempenho da CPU, RAM e Disco em um gráfico dinâmico.
 
 ## Tecnologias Utilizadas
 
@@ -53,13 +15,44 @@ http://localhost:8080/dashboard/metricas_tempo_real
                                
 <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /> <img  height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" /> <img height="40px" width="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" />
 
-## Contribuição
+## Instalação
 
-Sinta-se à vontade para contribuir com melhorias. Abra uma [issue](https://github.com/seu-usuario/seu-repositorio/issues) ou envie um [pull request](https://github.com/seu-usuario/seu-repositorio/pulls).
+1. Clone o repositório para sua máquina local:
+
+   ```bash
+   git clone https://github.com/Centrix-Solutions-Grupo-07/Projeto_Individual_Ruan.git
+   ```
+
+2. Abra o arquivo `index.html` em um navegador web.
+
+## Como Contribuir
+
+Se deseja contribuir para este projeto, siga as etapas abaixo:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua contribuição:
+
+   ```bash
+   git checkout -b feature/sua-contribuicao
+   ```
+
+3. Realize suas alterações e faça commit:
+
+   ```bash
+   git commit -m "Adiciona funcionalidade/sua-contribuicao"
+   ```
+
+4. Faça push para a branch:
+
+   ```bash
+   git push origin feature/sua-contribuicao
+   ```
+
+5. Abra um pull request na página do repositório.
 
 ## Licença
 
-Este projeto está licenciado sob a licença [MIT](LICENSE).
+Este projeto é distribuído sob a [Licença MIT](LICENSE).
 
 ## Contatos:
 

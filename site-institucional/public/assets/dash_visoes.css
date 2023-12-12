@@ -1,0 +1,240 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+}
+
+.container_principal {
+    height: 110vh;
+    display: flex;
+}
+
+.barra_lateral {
+    height: 133vh;
+}
+
+.area_dash {
+    height: fit-content;
+    width: 100%;
+    color: white;
+    background: linear-gradient(180deg, #4B3753 0%, #4B3753 0%, #4B3753 0.01%, rgba(90, 52, 169, 0.93) 9.09%,
+            #8565C9 18.18%, rgba(180, 153, 238, 0.96) 27.27%, rgba(170, 143, 225, 0.63) 39.58%,
+            rgba(206, 185, 249, 0.93) 50%, rgba(151, 116, 222, 0.68) 57.29%, rgba(161, 122, 243, 0.85) 64.58%,
+            rgba(167, 131, 242, 0.90) 70.31%, rgba(139, 89, 245, 0.63) 81.82%, #5A34A9 90.91%, rgba(75, 55, 83, 0.99) 100%);
+}
+
+.dash_superior {
+    height: 8vh;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.bem_vindo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+}
+
+.text_bemVindo1 {
+    font-size: 4vh;
+    font-weight: bolder;
+}
+
+.text_bemVindo2 {
+    font-size: 3vh;
+}
+
+/*DIV CENTRAL*/
+.div_central {
+    height: 120vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.div_conteudo {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu_visoes {
+    height: 10vh;
+    width: 70vw;
+    background-color: #1E1E1E;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    padding: 1rem;
+}
+
+.botao_visoes {
+    background-color: #8565C9;
+    height: 8vh;
+    width: 10vw;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botao_visoes:hover {
+    box-shadow: 0 0 1rem #bf8cd3;
+}
+
+.botao_visoes:active {
+    /* border: #672c7e solid 2px; */
+    box-shadow: 0 0 1rem #4e3681;
+}
+
+.div_individual {
+    min-height: 95vh;
+    height: fit-content;
+    width: 85vw;
+    background-color: #1E1E1E;
+    border-radius: 1rem;
+    padding: 1vh;
+    margin-top: 2vh;
+}
+
+/* Individual Paola */
+
+#conteudoPaola{
+    height: 100%;
+    width: 100%;
+    display: none;
+    /* background-color: aliceblue; */
+    /* display: flex; */
+}
+
+.kpisPaola {
+    height: 22vh;
+    width: 95%;
+    margin: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.kpiPaola {
+    display: flex;
+    height: 17vh;
+    width: 12vw;
+    background-color: #231F40;
+    box-shadow: 0 0 1.2rem #67548d;
+    border-radius: 1rem;
+}
+
+.tituloPaolaKpi {
+    width: 100%;
+    height: 4vh;
+    color: whitesmoke;
+    font-size: 2vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inferiorPaola {
+    height: 65vh;
+    width: 95%;
+    /* background-color: black; */
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 1vh;
+}
+
+.tituloPaola {
+    width: 100%;
+    height: 4vh;
+    color: white;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graficosPaola{
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.graficosPaola h1 {
+    font-size: 3vh;
+    font-weight: 300;
+}
+
+.chartPaola {
+    width: 42vw;
+}
+
+#graficoCpuPaola,
+#graficoRamPaola {
+    background-color: #000000;
+    border-radius: 1rem;
+    margin: 1vh;
+}
+
+/* .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip:hover:after {
+    content: attr(data-hint);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+  } */
+  
+
+/* Individual Rafa */
+.conteudoRafael {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+/* Individual Ruan*/
+.conteudoRuan {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+/* Individual Ale */
+.conteudoAle {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+/* Individual Edson */
+
+.conteudoEdson {
+    display: none;
+    height: 100%;
+    width: 100%;
+}

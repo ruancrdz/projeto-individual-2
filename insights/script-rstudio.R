@@ -1,58 +1,38 @@
-# Instale o pacote 'odbc' se ainda não estiver instalado
-if (!requireNamespace("odbc", quietly = TRUE)) {
-  install.packages("odbc")
-}
+# Instale e carregue as bibliotecas necessárias
+install.packages("odbc")
+install.packages("dplyr")
 
-# Carregue o pacote
 library(odbc)
+library(dplyr)
 
-# Defina os parâmetros da conexão para o SQL Server
-conexao <- dbConnect(
-  odbc(),
-  driver = "ODBC Driver 17 for SQL Server",  # ou o driver correspondente que você está usando
-  server = "44.197.21.59",
-  database = "Centrix",
-  uid = "sa",
-  pwd = "centrix"
-)
+# Configuração da conexão
+con <- dbConnect(odbc::odbc(),
+                 .connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=44.197.21.59;Database=centrix;Uid=sa;Pwd=centrix;")
 
-# Execute uma consulta de exemplo
-resultado <- dbGetQuery(conexao, "SELECT * FROM metricas_tempo_real")
+# Consultar dados da tabela
+query <- "SELECT data_hora, cpu_percent, ram_percent, disco_percent FROM metricas_tempo_real"
+dados <- dbGetQuery(con, query)
 
-# Visualize os resultados
-print(resultado)
+summary(dados)
 
-# Feche a conexão quando terminar
-dbDisconnect(conexao)
+# Boxplot para cada métrica
+boxplot(dados$cpu_percent, main = "Boxplot - CPU Percent", ylab = "CPU Percent")
+boxplot(dados$ram_percent, main = "Boxplot - RAM Percent", ylab = "RAM Percent")
+boxplot(dados$disco_percent, main = "Boxplot - Disco Percent", ylab = "Disco Percent")
 
-# Supondo que 'resultado' contenha os dados da tabela 'metricas_tempo_real'
-# (Certifique-se de executar o script de conexão do SQL Server primeiro)
+# Histograma para cada métrica
+hist(dados$cpu_percent, main = "Histograma - CPU Percent", xlab = "CPU Percent", col = "lightblue")
+hist(dados$ram_percent, main = "Histograma - RAM Percent", xlab = "RAM Percent", col = "lightgreen")
+hist(dados$disco_percent, main = "Histograma - Disco Percent", xlab = "Disco Percent", col = "lightcoral")
 
-# Calcule a média de cada métrica
-media_cpu <- mean(resultado$cpu_percent)
-media_ram <- mean(resultado$ram_percent)
-media_disco <- mean(resultado$disco_percent)
+# Exemplo de gráfico de linha usando ggplot2
+library(ggplot2)
 
-# Calcule o máximo de cada métrica
-max_cpu <- max(resultado$cpu_percent)
-max_ram <- max(resultado$ram_percent)
-max_disco <- max(resultado$disco_percent)
+ggplot(dados, aes(x = data_hora)) +
+  geom_line(aes(y = cpu_percent, color = "CPU")) +
+  geom_line(aes(y = ram_percent, color = "RAM")) +
+  geom_line(aes(y = disco_percent, color = "Disco")) +
+  labs(title = "Métricas ao longo do Tempo", y = "Percentagem")
 
-# Calcule o mínimo de cada métrica
-min_cpu <- min(resultado$cpu_percent)
-min_ram <- min(resultado$ram_percent)
-min_disco <- min(resultado$disco_percent)
-
-# Crie um resumo
-resumo <- data.frame(
-  Métrica = c("CPU", "RAM", "Disco"),
-  Média = c(media_cpu, media_ram, media_disco),
-  Máximo = c(max_cpu, max_ram, max_disco),
-  Mínimo = c(min_cpu, min_ram, min_disco)
-)
-
-# Exiba o resumo
-print(resumo)
-
-# Visualize as estatísticas descritivas
-summary(resultado)
+# Fechar a conexão
+dbDisconnect(con)

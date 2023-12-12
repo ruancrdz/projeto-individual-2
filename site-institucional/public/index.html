@@ -33,42 +33,55 @@
                     </span>
                 </div>
             </div>
-            <!-- Seção de monitoramento -->
-            <div class="card_monitoramento">
+            <div class="div_individual" id="div_individual">
+                <!-- Pop-up com informações sobre configurações -->
+                <div id="popup" class="popup">
+                    <div onclick="fecharPopup()" class="close">X</div>
+                    <br><b>CPU:</b>
+                    A CPU, ou processador, é a unidade central de processamento do computador. Em um
+                    ambiente de call center, é ideal ter uma <b>CPU com pelo menos 4 núcleos</b>. Isso
+                    permite a
+                    execução eficiente de múltiplas tarefas simultaneamente, melhorando a capacidade de
+                    resposta do sistema durante chamadas e operações relacionadas.
+
+                    <br><br><b>RAM:</b>
+                    A RAM (memória de acesso aleatório) é essencial para a velocidade e desempenho do
+                    sistema. Com <b>8GB de RAM</b>, um call center pode lidar de maneira eficaz com várias
+                    aplicações abertas ao mesmo tempo. Isso evita atrasos no atendimento ao cliente,
+                    garantindo uma experiência mais fluida e produtiva.
+
+                    <br><br><b>Disco:</b>
+                    O armazenamento em disco é crucial para guardar dados essenciais do call center. Um
+                    <b>disco de 500GB</b> oferece espaço adequado para armazenar registros de chamadas,
+                    informações
+                    do cliente e documentos relevantes. Isso assegura uma gestão eficiente de dados,
+                    facilitando o acesso rápido às informações necessárias durante as interações com os
+                    clientes.
+                </div>
                 <div class="area_topo">
                     <!-- Área superior esquerda -->
                     <div class="area_topo_esquerda">
-                        <div class="painel">
-                            <!-- Pop-up com informações sobre configurações -->
-                            <div id="popup" class="popup">
-                                <div onclick="fecharPopup()" class="close">X</div>
-                                <br><b>CPU:</b>
-                                A CPU, ou processador, é a unidade central de processamento do computador. Em um
-                                ambiente de call center, é ideal ter uma <b>CPU com pelo menos 4 núcleos</b>. Isso
-                                permite a
-                                execução eficiente de múltiplas tarefas simultaneamente, melhorando a capacidade de
-                                resposta do sistema durante chamadas e operações relacionadas.
-
-                                <br><br><b>RAM:</b>
-                                A RAM (memória de acesso aleatório) é essencial para a velocidade e desempenho do
-                                sistema. Com <b>8GB de RAM</b>, um call center pode lidar de maneira eficaz com várias
-                                aplicações abertas ao mesmo tempo. Isso evita atrasos no atendimento ao cliente,
-                                garantindo uma experiência mais fluida e produtiva.
-
-                                <br><br><b>Disco:</b>
-                                O armazenamento em disco é crucial para guardar dados essenciais do call center. Um
-                                <b>disco de 500GB</b> oferece espaço adequado para armazenar registros de chamadas,
-                                informações
-                                do cliente e documentos relevantes. Isso assegura uma gestão eficiente de dados,
-                                facilitando o acesso rápido às informações necessárias durante as interações com os
-                                clientes.
+                        <!-- Calculadora de Recursos -->
+                        <div class="calculadora">
+                            <h1>Verificar recursos
+                            </h1>
+                            <div class="botao_row">
+                                <!-- Botões para calcular e mostrar informações -->
+                                <button class="botao-calculadora" onclick="calcular()">Testar</button>
+                                <div class="botao-popup">
+                                    <button onclick="abrirPopup()"><img src="assets/informacao.png"
+                                            alt="Informação"></button>
+                                </div>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="painel-recomendacao">
+                        <div class="painel">
                             <!-- Barras de progresso para CPU, RAM e Disco -->
                             <div class="area_barra">
                                 <!-- Elementos para CPU -->
                                 <div class="h3-progress">
-                                    <h3>Qualidade da CPU: </h3>
+                                    <h3>Recursos de CPU: </h3>
                                     <h3 class="h3-margin" id="cpu"></h3>
                                 </div>
                                 <progress class="barra_painel" max="4" value="2" id="barra_cpu"></progress>
@@ -77,7 +90,7 @@
                             <!-- Elementos para RAM -->
                             <div class="area_barra">
                                 <div class="h3-progress">
-                                    <h3 clas>Qualidade da RAM: </h3>
+                                    <h3 clas>Quantidade de memória RAM: </h3>
                                     <h3 class="h3-margin" id="ram"></h3>
                                 </div>
                                 <progress class="barra_painel" max="8" value="4" id="barra_ram"></progress>
@@ -86,87 +99,81 @@
                             <!-- Elementos para Disco -->
                             <div class="area_barra">
                                 <div class="h3-progress">
-                                    <h3>Qualidade do Disco: </h3>
+                                    <h3>Capacidade do Disco: </h3>
                                     <h3 class="h3-margin" id="disco"></h3>
                                 </div>
                                 <progress class="barra_painel" max="500" value="250" id="barra_disco"></progress>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Área superior direita -->
-                    <div class="area_topo_direita">
-                        <!-- Calculadora de Recursos -->
-                        <div class="calculadora">
-                            <h1>Calculadora de Recursos</h1>
-                            <div class="botao_row">
-                                <!-- Botões para calcular e mostrar informações -->
-                                <button class="botao-calculadora" onclick="calcular()">Calcular</button>
-                                <div class="botao-popup">
-                                    <button onclick="abrirPopup()"><img src="assets/informacao.png"
-                                            alt="Informação"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Área do meio do dashboard -->
-                <div class="area_meio">
-                    <!-- Área meio esquerda -->
-                    <div class="area_meio_esquerda">
-                        <div class="alertas">
-                            <div>
-                                <h1>Alertas</h1>
-                            </div>
-                            <div class="container_alerta">
-                                <div>
-                                    <p>CPU:</p>
-                                    <p>RAM:</p>
-                                    <p>DISCO:</p>
-                                </div>
-                                <div>
-                                    <p id="alerta_metrica_cpu"></p>
-                                    <p id="alerta_metrica_ram"></p>
-                                    <p id="alerta_metrica_disco"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Área meio direita -->
-                    <div class="area_meio_direita">
                         <!-- Recomendações para configurações inadequadas -->
                         <div class="recomendacao">
                             <div>
                                 <h1 id="recomendacao_h1">Recomendações</h1>
                             </div>
                             <div class="container_recomendacao_p">
-                                <p class="recomendacao_p" id="recomendacao_nucleo" style="display: none;">Melhore a
-                                    agilidade no call center com um upgrade para mais de 4 núcleos de RAM.</p>
-                                <p class="recomendacao_p" id="recomendacao_ram" style="display: none;">Potencialize seu
-                                    desempenho no call center com 8GB de RAM.</p>
-                                <p class="recomendacao_p" id="recomendacao_disco" style="display: none;">Evite problemas
-                                    de armazenamento no call center: invista em um disco de 500GB.</p>
+                                <p class="recomendacao_p" id="recomendacao_ideal" style="display: none;">Nenhum upgrade
+                                    requerido!
+                                    Máquina ideal</p>
+                                <p class="recomendacao_p" id="recomendacao_nucleo" style="display: none;">Upgrade
+                                    requerido:
+                                    4
+                                    núcleos de CPU ou superior</p>
+                                <p class="recomendacao_p" id="recomendacao_ram" style="display: none;">Upgrade
+                                    requerido:
+                                    8GB de
+                                    RAM ou superior</p>
+                                <p class="recomendacao_p" id="recomendacao_disco" style="display: none;">Upgrade
+                                    requerido:
+                                    HD
+                                    SSD
+                                    de 500GB ou superior</p>
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <hr class="barra-horizontal">
+                <!-- Área do meio do dashboard -->
+                <div class="area_meio">
+                    <div class="alertas">
+                        <div class="container_alerta">
+                            <h2 class="texto-lateral">Alertas:</h2>
+                            <div>
+                                <p>CPU</p>
+                                <p id="alerta_metrica_cpu"><img height="20px" src="assets/circle-icon.png"></p>
+                            </div>
+                            <hr class="barra-vertical">
+                            <div>
+                                <p>RAM</p>
+                                <p id="alerta_metrica_ram"><img height="20px" src="assets/circle-icon.png"></p>
+                            </div>
+                            <hr class="barra-vertical">
+                            <div>
+                                <p>DISCO</p>
+                                <p id="alerta_metrica_disco"><img height="20px" src="assets/circle-icon.png"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Área inferior do dashboard -->
                 <div class="area_inferior">
                     <!-- Área inferior direita -->
                     <div class="area_inferior_direita">
-                        <!-- Botões para alterar o tipo de gráfico -->
+                        <!-- Drop-down para selecionar o tipo de gráfico -->
                         <div class="botao-grafico">
-                            <h1>Estilos de Gráficos</h1>
-                            <button onclick="alterarTipoGrafico('line')">Gráfico de Linha</button>
-                            <button onclick="alterarTipoGrafico('scatter')">Gráfico de Dispersão</button>
-                            <button onclick="alterarTipoGrafico('bar')">Gráfico de Barras</button>
-                            <button onclick="alterarTipoGrafico('radar')">Gráfico de Radar</button>
+                            <h1>Tipos de Gráficos</h1>
+                            <div class="dropdown">
+                                <button class="dropbtn">Selecionar Tipo</button>
+                                <div class="dropdown-content">
+                                    <a href="#" onclick="alterarTipoGrafico('line', event)">Gráfico em Linha</a>
+                                    <a href="#" onclick="alterarTipoGrafico('scatter', event)">Gráfico em Dispersão</a>
+                                    <a href="#" onclick="alterarTipoGrafico('bar', event)">Gráfico em Barras</a>
+                                    <a href="#" onclick="alterarTipoGrafico('radar', event)">Gráfico de Radar</a>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                     <!-- Área inferior esquerda -->
                     <div class="area_inferior_esquerda">
                         <!-- Elemento para o gráfico -->
@@ -178,13 +185,14 @@
             </div>
         </div>
     </div>
+    </div>
 </body>
 
 <!-- Script para fazer solicitação AJAX e obter dados do servidor -->
 <script>
     function calcular() {
         // Fazendo uma solicitação AJAX para o servidor
-        fetch('http://localhost:3333/dashboard/calcular')
+        fetch('http://localhost:8080/dashboard/calcular')
             .then(response => response.json())
             .then(data => {
                 // Destruturando os dados obtidos
@@ -312,7 +320,7 @@
     function atualizarGraficoTempoReal() {
 
         // Fazendo uma solicitação AJAX para obter dados de métricas em tempo real
-        fetch('http://localhost:3333/dashboard/metricas_tempo_real')
+        fetch('http://localhost:8080/dashboard/metricas_tempo_real')
             .then(response => response.json())
             .then(data => {
                 if (data.cpu_percent !== null && data.ram_percent !== null && data.disco_percent !== null) {

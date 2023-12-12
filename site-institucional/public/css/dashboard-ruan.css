@@ -59,7 +59,6 @@ body {
 
 /* Estilo para a parte superior do dashboard */
 .dash_superior {
-    width: 100%;
     height: fit-content;
     margin-top: 20px;
     display: flex;
@@ -180,23 +179,22 @@ body {
     height: fit-content;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 3%;
 }
 
 /* Estilo para a parte esquerda da área do topo */
 .area_topo_esquerda {
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
 /* Estilo para o painel principal */
 .painel {
-    width: 100%;
+    width: 50%;
     margin-left: 70px;
     color: white;
-    border-right: 1px solid #ccc;
     height: 45vh;
 }
 
@@ -299,11 +297,11 @@ progress::-webkit-progress-value {
     align-items: center;
     justify-content: center;
     width: 80%;
-    background-color: #5A34A9;
+    background-color: rgba(0, 0, 0, 0);
     height: 100%;
-    flex-direction: column;
     text-align: center;
     border-radius: 5vh;
+    margin-left: 15%;
 }
 
 /* Estilo para o botão da calculadora */
@@ -323,14 +321,14 @@ progress::-webkit-progress-value {
 .botao-calculadora:hover {
     transform: scale(1.1);
     background-color: white;
-    color: #5A34A9;
+    color: #1E1E1E;
 }
 
 /* Estilo para o pop-up de informações */
 .popup {
     display: none;
     position: fixed;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 80%;
@@ -340,6 +338,7 @@ progress::-webkit-progress-value {
     background-color: rgba(0, 0, 0, 0.9);
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 /* Estilo para os parágrafos dentro do pop-up */
@@ -409,10 +408,8 @@ progress::-webkit-progress-value {
     flex-direction: column;
     width: 80%;
     text-align: center;
-    justify-content: space-between;
     align-items: center;
     margin-top: 10%;
-    background-color: #5A34A9;
     border-radius: 5vh;
 
 }
@@ -433,7 +430,7 @@ progress::-webkit-progress-value {
 .botao-grafico button:hover {
     transform: scale(1.1);
     background-color: white;
-    color: #5A34A9;
+    color: black;
 }
 
 .grafico {
@@ -470,42 +467,30 @@ progress::-webkit-progress-value {
     text-align: center;
     display: flex;
     padding: 1%;
-    justify-content: space-between;
-}
-
-.area_meio_direita {
-    width: 50%;
-    display: flex;
-    justify-content: baseline;
-    margin-right: 10%;
-}
-
-.area_meio_esquerda {
-    width: 50%;
-    display: flex;
     justify-content: center;
 }
 
 .recomendacao {
-    background-color: rgb(0, 0, 0, 0);
+    background-color: #00000000;
     border-radius: 30px;
     border: solid 2px white;
-    width: 100%;
-    height: 40vh;
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+    min-height: 40vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
 }
 
 .alertas {
     background-color: rgb(0, 0, 0, 0);
-    border-radius: 30px;
-    border: solid 2px white;
-    width: 50%;
-    height: 40vh;
+    width: 80%;
+    height: fit-content;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .recomendacao .recomendacao_p {
@@ -528,6 +513,92 @@ progress::-webkit-progress-value {
 
 .container_alerta {
     display: flex;
-    justify-content: space-evenly;
-    color: gre;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.painel-recomendacao {
+    display: flex;
+    width: 100%;
+}
+
+.barra-horizontal {
+    width: 90%;
+    border-top: 1px solid #ccc;
+    /* Cor e estilo da borda */
+    margin-top: 20px;
+    /* Espaçamento superior */
+    margin-bottom: 10px;
+    /* Espaçamento inferior */
+}
+
+.texto-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-vertical {
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    /* Cor da barra */
+    display: inline-block;
+    margin: 0 10px;
+    /* Espaçamento à esquerda e à direita da barra */
+}
+
+/* Estilo do drop-down */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo do botão do drop-down */
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo do conteúdo do drop-down (itens do menu) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilo dos links no conteúdo do drop-down */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Mudar a cor do link ao passar o mouse sobre ele */
+.dropdown-content a:hover {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+/* Mostrar o conteúdo do drop-down quando o botão é clicado/hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.div_individual {
+    min-height: 95vh;
+    height: fit-content;
+    width: 85vw;
+    background-color: #1E1E1E;
+    border-radius: 1rem;
+    padding: 1vh;
+    margin-left: 2%;
+    margin-top: 2vh;
 }
